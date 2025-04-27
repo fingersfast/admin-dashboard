@@ -190,7 +190,7 @@ export default function ProductsPage() {
   const handleConfirmDelete = () => {
     if (selectedProduct) {
       setProducts(
-        products.filter((product) => product.id !== selectedProduct.id)
+        products.filter((product) => !selectedProducts.has(product.id!))
       );
       setIsDeleteModalOpen(false);
     }
